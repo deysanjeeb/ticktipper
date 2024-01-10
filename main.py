@@ -32,9 +32,11 @@ for tr in trs :
     td_texts = [td.text for td in tds]
     print(td_texts)
     print()
-    tips.append(td_texts)) 
+    tips.append(td_texts)
     
-    
+with open('tips.csv', 'w', newline='') as f:
+    writer = csv.writer(f)
+    writer.writerows(tips)
 # print(tips)
 sleep(10)
 driver.quit()
