@@ -3,6 +3,7 @@ from selenium.webdriver.chrome.service import Service
 from time import sleep
 from bs4 import BeautifulSoup 
 import csv
+import config
 
 service = Service(executable_path=r'/usr/bin/chromedriver')
 options = webdriver.ChromeOptions()
@@ -12,7 +13,7 @@ options.add_argument('--disable-dev-shm-usage')
 driver = webdriver.Chrome(service=service, options=options)
 driver.get("https://www.nirmalbang.com/nb-research/equity-technical-intraday-tips-and-calls.aspx")
 input_element = driver.find_element("xpath",'//*[@id="rch_txtmobile"]')
-input_element.send_keys('8828420553')
+input_element.send_keys(config.phno)
 link_element = driver.find_element("id",'checkresearchmobile')
 link_element.click()
 sleep(15)
