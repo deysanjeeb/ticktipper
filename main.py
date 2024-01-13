@@ -39,7 +39,7 @@ while True:
         print()
         tips.append(td_texts)
         
-    url = 'https://api.telegram.org/bot'+config.token+'/sendMessage?chat_id='+config.chat_id+'&text="{}"'.format(tips[0]+tips[0])
+    url = 'https://api.telegram.org/bot'+config.token+'/sendMessage?chat_id='+config.chat_id+'&text={}'.format(tips[0][0]+" "+tips[0][1])
     requests.get(url)
     with open('tips.csv', 'w', newline='') as f:
         writer = csv.writer(f)
